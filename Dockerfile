@@ -1,7 +1,7 @@
 FROM niaquinto/gradle
 
 RUN mkdir /app
-RUN gradle assemble
+RUN gradle build
 RUN mv ../build/libs/vite-server-*.jar vite-server.jar
 ADD vite-server.jar /app
 ADD entrypoint.sh /
