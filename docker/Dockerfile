@@ -1,6 +1,8 @@
 FROM openjdk:8
 
 RUN mkdir /app
+RUN './gradlew build'
+RUN 'mv ../build/libs/vite-server-*.jar vite-server.jar'
 ADD vite-server.jar /app
 ADD entrypoint.sh /
 RUN chmod +x entrypoint.sh
